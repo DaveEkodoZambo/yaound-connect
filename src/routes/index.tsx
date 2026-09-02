@@ -146,7 +146,7 @@ function Home_() {
               alt="Jeunes jouant au basket lors d'un forum des associations à Yaoundé"
               className="w-full object-cover"
             />
-            <div className="-mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
+            <div className="relative -mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
               <div className="flex flex-wrap items-center gap-5">
                 <span className="eyebrow text-accent-red">À la une</span>
                 <span className="eyebrow text-accent-blue">Actualité</span>
@@ -213,7 +213,7 @@ function Home_() {
               alt="Vue aérienne d'un parc réaménagé à Yaoundé"
               className="w-full object-cover"
             />
-            <div className="-mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
+            <div className="relative -mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
               <span className="eyebrow text-accent-blue">Actualité</span>
               <h2 className="mt-3 max-w-[18ch] text-4xl leading-[1.06] sm:text-5xl">
                 Protection de l'enfance : l'avancée des mesures pour renforcer l'encadrement
