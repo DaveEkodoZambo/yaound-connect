@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   IdCard,
   Briefcase,
@@ -19,12 +19,12 @@ import {
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { AirQuality } from "@/components/site/AirQuality";
-import heroSport from "@/assets/hero-sport.jpg";
-import cardTransport from "@/assets/card-transport.jpg";
-import cardCantine from "@/assets/card-cantine.jpg";
-import featureParc from "@/assets/feature-parc.jpg";
-import cardSeniors from "@/assets/card-seniors.jpg";
-import cardClub from "@/assets/card-club.jpg";
+import heroPatrimoine from "@/assets/yaounde-patrimoine.jpg";
+import cardMobilite from "@/assets/yaounde-mobilite.jpg";
+import cardMarche from "@/assets/yaounde-marche.jpg";
+import featureParc from "@/assets/yaounde-espace-vert.jpg";
+import cardStade from "@/assets/yaounde-stade.jpg";
+import cardEau from "@/assets/yaounde-eau.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,44 +64,44 @@ const QUICK_LINKS = [
 const FIL_INFO = [
   {
     time: "11:15",
-    lead: "Visite présidentielle.",
-    text: "Des restrictions de circulation sont mises en place dès le 3 septembre au boulevard du 20-Mai pour préparer la cérémonie officielle, avec un dispositif renforcé à la place Ahmadou-Ahidjo.",
+    lead: "Circulation au centre-ville.",
+    text: "Des travaux d’entretien sont programmés sur le boulevard du 20-Mai. Les usagers sont invités à suivre les itinéraires indiqués sur place.",
     pinned: true,
   },
   {
     time: "12:56",
-    lead: "Bonne lecture !",
-    text: "Le dernier numéro du magazine À Yaoundé est disponible dans les mairies d'arrondissement et les principaux lieux publics de la ville.",
+    lead: "Mémoire de Yaoundé.",
+    text: "Découvrez l’histoire populaire de Laboratoire Méka, Titi Garage, Madagascar, Camp Sonel et dix-sept autres lieux emblématiques.",
   },
   {
     time: "12:00",
-    lead: "À table !",
-    text: "Oubliez les mauvais souvenirs de la cantine : les écoles de la ville proposent désormais des repas plus variés, à base de produits locaux et de saison.",
+    lead: "Marchés de proximité.",
+    text: "Les opérations de salubrité se poursuivent dans les marchés de quartier pour améliorer l’accueil des commerçants et des usagers.",
   },
   {
     time: "11:13",
-    lead: "Forums des associations.",
-    text: "Envie de vous mettre au sport, de prendre des cours de théâtre ou de vous engager dans une action solidaire ? Du 5 au 19 septembre, rencontrez les associations de votre quartier.",
+    lead: "Sport dans les quartiers.",
+    text: "Les terrains de proximité accueillent de nouvelles activités pour les jeunes, les familles et les associations sportives de la capitale.",
   },
   {
     time: "09:29",
-    lead: "Deux centres de santé transformés.",
-    text: "Les centres médico-sociaux de Nkolndongo et de Biyem-Assi accueillent désormais les familles dans des locaux plus spacieux et accessibles.",
+    lead: "Borne Fontaine, une histoire d’eau.",
+    text: "À Emana, le nom du carrefour rappelle les six fontaines publiques qui alimentaient autrefois quotidiennement les habitants.",
   },
   {
     time: "09:15",
-    lead: "Coup de Pouce recrute.",
-    text: "Vous êtes disponible en soirée à partir de 16h30 ? Pour accompagner des élèves du primaire en français et en mathématiques, devenez animateur d'aide à la scolarité.",
+    lead: "Yaoundé ville propre.",
+    text: "Les équipes municipales renforcent le nettoyage des axes, des caniveaux et des espaces publics dans les sept arrondissements.",
   },
   {
     time: "01/09",
-    lead: "Nouveauté aux Cours d'Adultes de Yaoundé.",
-    text: "Un cours annuel de 90 h pour adultes en situation de handicap est proposé en 2026-2027 : français, langues et ateliers créatifs adaptés.",
+    lead: "Appel aux archives familiales.",
+    text: "Photographies, plans et récits d’anciens habitants peuvent aider à documenter l’origine des noms populaires de la ville.",
   },
   {
     time: "01/09",
-    lead: "La mairie du 3e a 50 ans !",
-    text: "C'est depuis 1976 que l'administration de l'arrondissement est installée dans le quartier historique de la Briqueterie.",
+    lead: "Connaissez-vous Anne Rouge ?",
+    text: "La recherche continue pour retrouver l’origine exacte du nom de la célèbre montée yaoundéenne.",
   },
 ];
 
@@ -140,41 +140,46 @@ function Home_() {
           {/* À la une */}
           <article>
             <img
-              src={heroSport}
+              src={heroPatrimoine}
               width={1280}
               height={860}
-              alt="Jeunes jouant au basket lors d'un forum des associations à Yaoundé"
+              alt="Avenue animée de Yaoundé entre bâtiments historiques et collines"
               className="w-full object-cover"
             />
             <div className="relative z-10 -mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
               <div className="flex flex-wrap items-center gap-5">
                 <span className="eyebrow text-accent-red">À la une</span>
-                <span className="eyebrow text-accent-blue">Actualité</span>
+                <span className="eyebrow text-accent-blue">Histoire de la ville</span>
               </div>
-              <h1 className="mt-4 max-w-[16ch] text-4xl leading-[1.05] sm:text-5xl lg:text-[3.5rem]">
-                En septembre, découvrez les associations de votre quartier !
-              </h1>
+              <Link to="/histoire/21-lieux-emblematiques-yaounde" className="group block">
+                <h1 className="mt-4 max-w-[16ch] text-4xl leading-[1.05] group-hover:text-accent-red sm:text-5xl lg:text-[3.5rem]">
+                  21 lieux emblématiques qui racontent l’histoire de Yaoundé
+                </h1>
+              </Link>
               <p className="mt-6 max-w-[46ch] text-[1.05rem] leading-relaxed text-foreground/85">
-                Cours de théâtre, foot entre voisins, ateliers solidaires, sorties nature, cours de
-                langues ou de cuisine du monde… En septembre, les forums des associations …
+                Les noms de quartiers, rues et carrefours témoignent de personnages, d’activités,
+                d’événements et des grandes transformations de la capitale camerounaise…
               </p>
+              <Link to="/histoire/21-lieux-emblematiques-yaounde" className="mt-5 inline-block link-more">
+                Lire le dossier
+              </Link>
             </div>
           </article>
 
           {/* Deux cartes */}
           <div className="mt-16 grid gap-10 sm:grid-cols-2 sm:divide-x sm:divide-border">
             <CardArticle
-              image={cardTransport}
-              alt="Validation d'une carte de transport dans un bus à Yaoundé"
+              image={cardMobilite}
+              alt="Taxis et autobus circulant sur une grande avenue de Yaoundé"
               kicker="Service"
-              title="Dès le 3 septembre, demandez le remboursement de vos titres de transport !"
+              title="Mobilité urbaine : mieux circuler sur les grands axes de la capitale"
               className="sm:pr-10"
             />
             <CardArticle
-              image={cardCantine}
-              alt="Élèves déjeunant à la cantine d'une école de Yaoundé"
+              image={cardMarche}
+              alt="Commerçantes et clientes dans un marché de Yaoundé"
               kicker="Actualité"
-              title="Des cantines scolaires locales et 100 % durables à l'horizon 2027"
+              title="Marchés de quartier : proximité, produits locaux et salubrité"
               className="sm:pl-10"
             />
           </div>
@@ -183,22 +188,22 @@ function Home_() {
           <article className="mt-20">
             <span className="eyebrow text-accent-blue">Dossier</span>
             <h2 className="mt-3 max-w-[22ch] text-4xl leading-[1.08] sm:text-5xl">
-              On préfère manger à la cantine ! Les recettes des écoles yaoundéennes
+              Les noms populaires qui dessinent la géographie de Yaoundé
             </h2>
           </article>
 
           <div className="mt-16 grid gap-10 sm:grid-cols-2 sm:divide-x sm:divide-border">
             <CardArticle
-              image={cardSeniors}
-              alt="Séance de gymnastique douce pour seniors dans un parc de Yaoundé"
-              kicker="Service"
-              title="Yaoundé Sport Seniors 2026-2027 : les inscriptions sont ouvertes !"
+              image={cardStade}
+              alt="Jeunes jouant au football sur un terrain de quartier à Yaoundé"
+              kicker="Histoire"
+              title="Stade Malien : un héritage de la CAN 1972 au cœur de Nkoldongo"
             />
             <CardArticle
-              image={cardClub}
-              alt="Habitante devant un club de quartier à Yaoundé"
-              kicker="Série"
-              title="C'est comment… les clubs seniors ? Réponses d'usagers !"
+              image={cardEau}
+              alt="Habitants utilisant une borne-fontaine dans un quartier de Yaoundé"
+              kicker="Mémoire urbaine"
+              title="Borne Fontaine : quand six points d’eau donnaient leur nom à Emana"
               className="sm:pl-10"
             />
           </div>
@@ -210,14 +215,13 @@ function Home_() {
               width={1280}
               height={760}
               loading="lazy"
-              alt="Vue aérienne d'un parc réaménagé à Yaoundé"
+              alt="Vue d’un espace vert aménagé dans les collines de Yaoundé"
               className="w-full object-cover"
             />
             <div className="relative z-10 -mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
               <span className="eyebrow text-accent-blue">Actualité</span>
               <h2 className="mt-3 max-w-[18ch] text-4xl leading-[1.06] sm:text-5xl">
-                Protection de l'enfance : l'avancée des mesures pour renforcer l'encadrement
-                périscolaire
+                Espaces verts : préserver la nature au cœur de la ville aux sept collines
               </h2>
             </div>
           </article>
