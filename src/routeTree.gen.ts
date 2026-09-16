@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Histoire21LieuxEmblematiquesYaoundeRouteImport } from './routes/histoire.21-lieux-emblematiques-yaounde'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Histoire21LieuxEmblematiquesYaoundeRoute =
+  Histoire21LieuxEmblematiquesYaoundeRouteImport.update({
+    id: '/histoire/21-lieux-emblematiques-yaounde',
+    path: '/histoire/21-lieux-emblematiques-yaounde',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/histoire/21-lieux-emblematiques-yaounde'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/histoire/21-lieux-emblematiques-yaounde'
+  id: '__root__' | '/' | '/histoire/21-lieux-emblematiques-yaounde'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Histoire21LieuxEmblematiquesYaoundeRoute: typeof Histoire21LieuxEmblematiquesYaoundeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/histoire/21-lieux-emblematiques-yaounde': {
+      id: '/histoire/21-lieux-emblematiques-yaounde'
+      path: '/histoire/21-lieux-emblematiques-yaounde'
+      fullPath: '/histoire/21-lieux-emblematiques-yaounde'
+      preLoaderRoute: typeof Histoire21LieuxEmblematiquesYaoundeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Histoire21LieuxEmblematiquesYaoundeRoute:
+    Histoire21LieuxEmblematiquesYaoundeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
