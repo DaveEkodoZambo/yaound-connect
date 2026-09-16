@@ -86,11 +86,11 @@ export function HeroSlider() {
         ))}
       </div>
 
-      <p className="pointer-events-none absolute bottom-4 left-0 right-0 text-center font-display text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+      <p className="pointer-events-none absolute left-4 top-4 bg-background/85 px-3 py-1 font-display text-xs font-bold uppercase tracking-wide text-brand sm:text-sm">
         {SLIDES[index]?.caption}
       </p>
 
-      <div className="absolute bottom-4 right-4 flex gap-2">
+      <div className="absolute right-4 top-4 flex gap-2">
         {SLIDES.map((slide, i) => (
           <button
             key={slide.src}
@@ -98,8 +98,8 @@ export function HeroSlider() {
             onClick={() => select(i)}
             aria-label={`Afficher ${slide.caption}`}
             aria-current={i === index}
-            className={`h-2.5 w-2.5 rounded-full border border-white transition-colors ${
-              i === index ? "bg-white" : "bg-white/40 hover:bg-white/70"
+            className={`h-2.5 w-2.5 rounded-full transition-colors ${
+              i === index ? "bg-white ring-1 ring-brand/40" : "bg-white/60 hover:bg-white"
             }`}
           />
         ))}
