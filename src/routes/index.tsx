@@ -140,13 +140,7 @@ function Home_() {
         <div className="lg:order-2">
           {/* À la une */}
           <article>
-            <img
-              src={heroPatrimoine}
-              width={1280}
-              height={860}
-              alt="Avenue animée de Yaoundé entre bâtiments historiques et collines"
-              className="w-full object-cover"
-            />
+            <HeroSlider />
             <div className="relative z-10 -mt-8 bg-background pt-6 sm:-mt-24 sm:ml-10 sm:pl-8 sm:pr-10 sm:pt-10">
               <div className="flex flex-wrap items-center gap-5">
                 <span className="eyebrow text-accent-red">À la une</span>
