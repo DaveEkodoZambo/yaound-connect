@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  IdCard,
-  Briefcase,
-  Car,
-  UserRound,
-  Users,
-  FileText,
+  Landmark,
+  UsersRound,
+  Newspaper,
+  Building2,
+  MapPinned,
+  ClipboardCheck,
+  Store,
   Trash2,
-  AlertTriangle,
-  Home,
-  CalendarDays,
+  Radio,
+  MessageSquareText,
   ExternalLink,
   Paperclip,
   Clock,
@@ -49,16 +49,16 @@ export const Route = createFileRoute("/")({
 });
 
 const QUICK_LINKS = [
-  { icon: IdCard, label: "Carte nationale d'identité / Passeport" },
-  { icon: Briefcase, label: "Yaoundé recrute" },
-  { icon: Car, label: "Stationnement résidentiel" },
-  { icon: UserRound, label: "Accédez à votre compte « Mon Yaoundé »" },
-  { icon: Users, label: "Yaoundé Familles" },
-  { icon: FileText, label: "État civil" },
-  { icon: Trash2, label: "Service des encombrants" },
-  { icon: AlertTriangle, label: "Signaler une anomalie avec DansMaVille" },
-  { icon: Home, label: "Logement : prise de RDV en ligne" },
-  { icon: CalendarDays, label: "Demande d'organisation d'événements dans l'espace public" },
+  { icon: Landmark, label: "Ma Mairie : institution et gouvernance" },
+  { icon: UsersRound, label: "Maire, élus et Conseil de Communauté" },
+  { icon: Newspaper, label: "Actualités et communiqués officiels" },
+  { icon: Building2, label: "Grands projets et réalisations urbaines" },
+  { icon: MapPinned, label: "Géoportail de la ville de Yaoundé" },
+  { icon: ClipboardCheck, label: "Urbanisme et suivi des permis de construire" },
+  { icon: Store, label: "Espaces commerciaux, kiosques et salles" },
+  { icon: Trash2, label: "Hygiène, salubrité et fourrière municipale" },
+  { icon: Radio, label: "Radio NKUL ONGOLA et agenda de la ville" },
+  { icon: MessageSquareText, label: "Requêtes, signalements et assistance aux usagers" },
 ];
 
 const FIL_INFO = [
