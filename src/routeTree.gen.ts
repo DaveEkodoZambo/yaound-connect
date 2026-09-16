@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Histoire21LieuxEmblematiquesYaoundeRouteImport } from './routes/histoire.21-lieux-emblematiques-yaounde'
+import { Route as InstitutionAnciensMairesRouteImport } from './routes/institution.anciens-maires'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,31 +24,51 @@ const Histoire21LieuxEmblematiquesYaoundeRoute =
     path: '/histoire/21-lieux-emblematiques-yaounde',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InstitutionAnciensMairesRoute =
+  InstitutionAnciensMairesRouteImport.update({
+    id: '/institution/anciens-maires',
+    path: '/institution/anciens-maires',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
+  '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
+  '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
+  '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/histoire/21-lieux-emblematiques-yaounde'
+  fullPaths:
+    | '/'
+    | '/histoire/21-lieux-emblematiques-yaounde'
+    | '/institution/anciens-maires'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/histoire/21-lieux-emblematiques-yaounde'
-  id: '__root__' | '/' | '/histoire/21-lieux-emblematiques-yaounde'
+  to:
+    | '/'
+    | '/histoire/21-lieux-emblematiques-yaounde'
+    | '/institution/anciens-maires'
+  id:
+    | '__root__'
+    | '/'
+    | '/histoire/21-lieux-emblematiques-yaounde'
+    | '/institution/anciens-maires'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Histoire21LieuxEmblematiquesYaoundeRoute: typeof Histoire21LieuxEmblematiquesYaoundeRoute
+  InstitutionAnciensMairesRoute: typeof InstitutionAnciensMairesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +87,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Histoire21LieuxEmblematiquesYaoundeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institution/anciens-maires': {
+      id: '/institution/anciens-maires'
+      path: '/institution/anciens-maires'
+      fullPath: '/institution/anciens-maires'
+      preLoaderRoute: typeof InstitutionAnciensMairesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -73,6 +101,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Histoire21LieuxEmblematiquesYaoundeRoute:
     Histoire21LieuxEmblematiquesYaoundeRoute,
+  InstitutionAnciensMairesRoute: InstitutionAnciensMairesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
