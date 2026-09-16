@@ -25,6 +25,7 @@ import cardMarche from "@/assets/yaounde-marche.jpg";
 import featureParc from "@/assets/yaounde-espace-vert.jpg";
 import cardStade from "@/assets/yaounde-stade.jpg";
 import cardEau from "@/assets/yaounde-eau.jpg";
+import { HeroSlider } from "@/components/site/HeroSlider";
 
 export const Route = createFileRoute("/")({
   head: () => ({
