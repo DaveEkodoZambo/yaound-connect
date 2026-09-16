@@ -87,7 +87,7 @@ export function HeroSlider() {
       </div>
 
       <p className="pointer-events-none absolute bottom-4 left-0 right-0 text-center font-display text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-        {SLIDES[index].caption}
+        {SLIDES[index]?.caption}
       </p>
 
       <div className="absolute bottom-4 right-4 flex gap-2">
