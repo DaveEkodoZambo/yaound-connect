@@ -19,7 +19,6 @@ import {
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { AirQuality } from "@/components/site/AirQuality";
-import heroPatrimoine from "@/assets/yaounde-patrimoine.jpg";
 import cardMobilite from "@/assets/yaounde-mobilite.jpg";
 import cardMarche from "@/assets/yaounde-marche.jpg";
 import featureParc from "@/assets/yaounde-espace-vert.jpg";
