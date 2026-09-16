@@ -14,6 +14,7 @@ import {
   Paperclip,
   Clock,
   Download,
+  History,
 } from "lucide-react";
 
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -50,6 +51,11 @@ export const Route = createFileRoute("/")({
 
 const QUICK_LINKS = [
   { icon: Landmark, label: "Ma Mairie : institution et gouvernance" },
+  {
+    icon: History,
+    label: "Les anciens maires de Yaoundé",
+    to: "/institution/anciens-maires" as const,
+  },
   { icon: UsersRound, label: "Maire, élus et Conseil de Communauté" },
   { icon: Newspaper, label: "Actualités et communiqués officiels" },
   { icon: Building2, label: "Grands projets et réalisations urbaines" },
@@ -115,17 +121,29 @@ function Home_() {
         <aside className="lg:order-1">
           <h2 className="text-center text-2xl">Accès rapides</h2>
           <ul className="mt-6 space-y-2">
-            {QUICK_LINKS.map(({ icon: Icon, label }) => (
+            {QUICK_LINKS.map(({ icon: Icon, label, ...item }) => (
               <li key={label}>
-                <a
-                  href="#"
-                  className="flex items-start gap-3 bg-surface px-4 py-4 text-[0.95rem] leading-snug text-brand transition-colors hover:bg-border/60"
-                >
-                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-                  <span className="min-w-0">
-                    {label} <ExternalLink className="mb-0.5 inline h-3.5 w-3.5" />
-                  </span>
-                </a>
+                {"to" in item ? (
+                  <Link
+                    to={item.to}
+                    className="flex items-start gap-3 bg-surface px-4 py-4 text-[0.95rem] leading-snug text-brand transition-colors hover:bg-border/60"
+                  >
+                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
+                    <span className="min-w-0">
+                      {label} <ExternalLink className="mb-0.5 inline h-3.5 w-3.5" />
+                    </span>
+                  </Link>
+                ) : (
+                  <a
+                    href="#"
+                    className="flex items-start gap-3 bg-surface px-4 py-4 text-[0.95rem] leading-snug text-brand transition-colors hover:bg-border/60"
+                  >
+                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
+                    <span className="min-w-0">
+                      {label} <ExternalLink className="mb-0.5 inline h-3.5 w-3.5" />
+                    </span>
+                  </a>
+                )}
               </li>
             ))}
           </ul>
