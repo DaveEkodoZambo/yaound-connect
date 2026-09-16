@@ -118,7 +118,7 @@ function LandmarksPage() {
                 </div>
 
                 <p className="mt-10 border-t border-border pt-6 text-sm text-foreground/70">
-                  Source : Club Journal — Centre Éducatif Bastos. {
+                  Source : Club Journal — Centre Éducatif Bastos. {" "}
                   <a
                     href="https://centre-educatif.org"
                     target="_blank"
