@@ -155,16 +155,16 @@ function MayorRow({
       <article className="group grid items-stretch gap-8 lg:grid-cols-2 lg:gap-14">
         {/* Portrait */}
         <div className={cn("relative", imageRight && "lg:order-2")}>
-          <div className="relative z-10 aspect-[4/5] overflow-hidden bg-surface sm:aspect-[16/10] lg:aspect-[4/5]">
+          <div className="relative z-10 grid aspect-[4/5] place-items-center bg-surface p-6 sm:aspect-[16/10] lg:aspect-[4/5] lg:p-8">
             <img
               src={mayor.image}
               width={720}
               height={900}
               loading={index === 0 ? "eager" : "lazy"}
               alt={mayor.alt}
-              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+              className="max-h-full w-auto max-w-full object-contain shadow-md transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="absolute bottom-0 left-0 bg-accent-red px-4 py-2 font-display text-xs font-bold uppercase tracking-wider text-brand-foreground transition-transform duration-500 group-hover:-translate-y-1">
               {mayor.status}
             </span>
