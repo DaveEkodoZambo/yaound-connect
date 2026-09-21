@@ -12,7 +12,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 
 const title = "Les maires de Yaoundé — Communauté Urbaine";
 const description =
-  "Découvrez les maires qui ont dirigé la ville de Yaoundé, d’André Fouda Omgba à Luc Messi Atangana, et leurs réalisations.";
+  "Découvrez les maires qui ont dirigé la ville de Yaoundé, de Luc Messi Atangana à André Fouda Omgba, et leurs réalisations.";
 
 const MAYORS = [
   {
@@ -255,7 +255,7 @@ function FormerMayorsPage() {
                 Les maires de Yaoundé
               </h1>
               <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-brand-foreground/85 sm:text-xl">
-                D’André Fouda Omgba à Luc Messi Atangana : les visages et les
+                De Luc Messi Atangana à André Fouda Omgba : les visages et les
                 grandes réalisations de ceux qui ont dirigé la capitale.
               </p>
             </Reveal>
@@ -264,7 +264,7 @@ function FormerMayorsPage() {
 
         <section className="mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-10 lg:py-24">
           <div className="space-y-20 lg:space-y-28">
-            {MAYORS.map((mayor, index) => (
+            {[...MAYORS].reverse().map((mayor, index) => (
               <MayorRow key={mayor.name} mayor={mayor} index={index} />
             ))}
           </div>
