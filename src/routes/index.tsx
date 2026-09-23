@@ -1,15 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Landmark,
-  UsersRound,
   Newspaper,
   Building2,
   MapPinned,
   ClipboardCheck,
-  Store,
-  Trash2,
-  Radio,
-  MessageSquareText,
+  Gavel,
+  House,
+  Palmtree,
+  BriefcaseBusiness,
   ExternalLink,
   Paperclip,
   Clock,
@@ -50,21 +49,20 @@ export const Route = createFileRoute("/")({
 });
 
 const QUICK_LINKS = [
-  { icon: Landmark, label: "Ma Mairie : institution et gouvernance" },
+  { icon: Newspaper, label: "Actualités et communiqués officiels" },
   {
     icon: History,
-    label: "Les anciens maires de Yaoundé",
+    label: "Maires de la Ville de Yaoundé et anciens élus de la Ville",
     to: "/institution/anciens-maires" as const,
   },
-  { icon: UsersRound, label: "Maire, élus et Conseil de Communauté" },
-  { icon: Newspaper, label: "Actualités et communiqués officiels" },
   { icon: Building2, label: "Grands projets et réalisations urbaines" },
-  { icon: MapPinned, label: "Géoportail de la ville de Yaoundé" },
-  { icon: ClipboardCheck, label: "Urbanisme et suivi des permis de construire" },
-  { icon: Store, label: "Espaces commerciaux, kiosques et salles" },
-  { icon: Trash2, label: "Hygiène, salubrité et fourrière municipale" },
-  { icon: Radio, label: "Radio NKUL ONGOLA et agenda de la ville" },
-  { icon: MessageSquareText, label: "Requêtes, signalements et assistance aux usagers" },
+  { icon: Gavel, label: "Marchés publics" },
+  { icon: ClipboardCheck, label: "Suivi des actes d’urbanisme" },
+  { icon: Landmark, label: "Monuments emblématiques" },
+  { icon: House, label: "Logements" },
+  { icon: Palmtree, label: "Tourisme et loisirs" },
+  { icon: MapPinned, label: "Géoportail de la Ville" },
+  { icon: BriefcaseBusiness, label: "Offres d’emploi" },
 ];
 
 const FIL_INFO = [
