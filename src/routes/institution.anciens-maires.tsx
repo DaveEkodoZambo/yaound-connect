@@ -6,6 +6,7 @@ import andreFoudaOmgba from "@/assets/andre-fouda-omgba.jpg.asset.json";
 import gilbertTsimiEvouna from "@/assets/gilbert-tsimi-evouna.jpg.asset.json";
 import lucMessiAtangana from "@/assets/luc-messi-atangana.jpg.asset.json";
 import nicaloAmougouNoma from "@/assets/nicalo-amougou-noma.jpg.asset.json";
+import monumentReunification from "@/assets/reunification.jpg.asset.json";
 import { cn } from "@/lib/utils";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -231,14 +232,14 @@ function FormerMayorsPage() {
 
       <main>
         <section className="relative overflow-hidden bg-brand text-brand-foreground">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-accent-red/20 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 left-1/4 h-80 w-80 rounded-full bg-accent-blue/20 blur-3xl"
-          />
+          <div className="absolute inset-y-0 right-0 hidden w-[44%] lg:block">
+            <img
+              src={monumentReunification.url}
+              alt="Monument de la Réunification à Yaoundé"
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/30 to-transparent" />
+          </div>
           <div className="relative z-10 mx-auto max-w-[1400px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
             <Link
               to="/"
@@ -251,7 +252,7 @@ function FormerMayorsPage() {
               <p className="mt-10 eyebrow text-brand-foreground/75">
                 Institution et gouvernance
               </p>
-              <h1 className="mt-4 max-w-[14ch] text-4xl leading-[1.05] sm:text-5xl lg:text-[4rem]">
+              <h1 className="mt-4 max-w-[13ch] text-4xl leading-[1.05] sm:text-5xl lg:text-[4rem]">
                 Les maires de Yaoundé
               </h1>
               <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-brand-foreground/85 sm:text-xl">
