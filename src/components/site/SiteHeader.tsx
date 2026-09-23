@@ -16,10 +16,11 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type PanelName = "services" | "citoyenne" | "sorties" | "search" | "display";
+type MenuPanelName = "services" | "citoyenne" | "sorties";
+type PanelName = MenuPanelName | "search" | "display";
 
 const MENUS: Record<
-  Exclude<PanelName, "search" | "display">,
+  MenuPanelName,
   { quick: string[]; columns: string[][] }
 > = {
   services: {
@@ -57,7 +58,7 @@ const MENUS: Record<
   },
 };
 
-const NAV_ITEMS: { key: PanelName; label: string }[] = [
+const NAV_ITEMS: { key: MenuPanelName; label: string }[] = [
   { key: "services", label: "Services" },
   { key: "citoyenne", label: "Vie citoyenne" },
   { key: "sorties", label: "Que faire à Yaoundé ?" },
