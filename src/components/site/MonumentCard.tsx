@@ -1,12 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import motifTraditionnel from "@/assets/motif-traditionnel-centre.png";
 import type { Monument } from "@/data/monuments";
 
 export function MonumentCard({ monument, index }: { monument: Monument; index: number }) {
   return (
     <Link to="/monuments/$slug" params={{ slug: monument.slug }} className="group block min-w-0 border-b border-border pb-8 focus-visible:outline-2 focus-visible:outline-accent-blue focus-visible:outline-offset-4">
-      <div className="relative overflow-hidden bg-surface">
-        <img src={monument.image} alt={monument.alt} loading="lazy" className="aspect-[3/2] w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-[1.025]" />
+      <div className="relative overflow-hidden bg-surface" style={{ backgroundImage: `url(${motifTraditionnel})`, backgroundSize: "320px" }}>
+        <div aria-hidden="true" className="absolute inset-0 bg-background/50" />
+        <img src={monument.image} alt={monument.alt} loading="lazy" className="relative z-10 aspect-[3/2] w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-[1.025]" />
         <span aria-hidden="true" className="absolute bottom-0 left-0 bg-background px-4 py-2 font-display text-sm font-bold text-accent-red">0{index + 1}</span>
       </div>
       <div className="mt-6 flex items-start justify-between gap-4">

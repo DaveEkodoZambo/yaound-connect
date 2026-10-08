@@ -3,7 +3,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { MonumentCard } from "@/components/site/MonumentCard";
+import motifTraditionnel from "@/assets/motif-traditionnel-centre.png";
 import { monuments } from "@/data/monuments";
+
+
 
 export const Route = createFileRoute("/monuments/$slug")({
   loader: ({ params }) => {
@@ -40,9 +43,10 @@ function MonumentDetailPage() {
           <h1 className="mt-4 max-w-[24ch] text-4xl leading-tight sm:text-5xl">{monument.name}</h1>
           <p className="mt-6 max-w-[65ch] text-xl leading-relaxed text-foreground/80">{monument.summary}</p>
         </div>
-        <figure className="bg-surface">
-          <img src={monument.image} alt={monument.alt} className="mx-auto h-[400px] w-full max-w-[1120px] object-contain sm:h-[560px]" />
-          <figcaption className="mx-auto max-w-[1120px] px-5 py-4 text-sm leading-relaxed text-muted-foreground sm:px-8">{monument.caption}</figcaption>
+        <figure className="relative overflow-hidden bg-surface" style={{ backgroundImage: `url(${motifTraditionnel})`, backgroundSize: "320px" }}>
+          <div aria-hidden="true" className="absolute inset-0 bg-background/50" />
+          <img src={monument.image} alt={monument.alt} className="relative z-10 mx-auto h-[400px] w-full max-w-[1120px] object-contain sm:h-[560px]" />
+          <figcaption className="relative z-10 mx-auto max-w-[1120px] bg-background/85 px-5 py-4 text-sm leading-relaxed text-muted-foreground sm:px-8">{monument.caption}</figcaption>
         </figure>
         <div className="mx-auto grid max-w-[1120px] gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[240px_minmax(0,1fr)]">
           <aside>
