@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep monument descriptions and asset references in a shared browser-safe data module, with a gallery leaf and a slug-based detail leaf, so content and navigation stay consistent.
