@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Histoire21LieuxEmblematiquesYaoundeRouteImport } from './routes/histoire.21-lieux-emblematiques-yaounde'
 import { Route as InstitutionAnciensMairesRouteImport } from './routes/institution.anciens-maires'
+import { Route as MonumentsIndexRouteImport } from './routes/monuments.index'
+import { Route as MonumentsSlugRouteImport } from './routes/monuments.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,22 +32,38 @@ const InstitutionAnciensMairesRoute =
     path: '/institution/anciens-maires',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MonumentsIndexRoute = MonumentsIndexRouteImport.update({
+  id: '/monuments/',
+  path: '/monuments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonumentsSlugRoute = MonumentsSlugRouteImport.update({
+  id: '/monuments/$slug',
+  path: '/monuments/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
+  '/monuments/$slug': typeof MonumentsSlugRoute
+  '/monuments/': typeof MonumentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
+  '/monuments/$slug': typeof MonumentsSlugRoute
+  '/monuments': typeof MonumentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
+  '/monuments/$slug': typeof MonumentsSlugRoute
+  '/monuments/': typeof MonumentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -53,22 +71,30 @@ export interface FileRouteTypes {
     | '/'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
+    | '/monuments/$slug'
+    | '/monuments/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
+    | '/monuments/$slug'
+    | '/monuments'
   id:
     | '__root__'
     | '/'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
+    | '/monuments/$slug'
+    | '/monuments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Histoire21LieuxEmblematiquesYaoundeRoute: typeof Histoire21LieuxEmblematiquesYaoundeRoute
   InstitutionAnciensMairesRoute: typeof InstitutionAnciensMairesRoute
+  MonumentsSlugRoute: typeof MonumentsSlugRoute
+  MonumentsIndexRoute: typeof MonumentsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -94,6 +120,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstitutionAnciensMairesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/monuments/': {
+      id: '/monuments/'
+      path: '/monuments'
+      fullPath: '/monuments/'
+      preLoaderRoute: typeof MonumentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monuments/$slug': {
+      id: '/monuments/$slug'
+      path: '/monuments/$slug'
+      fullPath: '/monuments/$slug'
+      preLoaderRoute: typeof MonumentsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -102,6 +142,8 @@ const rootRouteChildren: RootRouteChildren = {
   Histoire21LieuxEmblematiquesYaoundeRoute:
     Histoire21LieuxEmblematiquesYaoundeRoute,
   InstitutionAnciensMairesRoute: InstitutionAnciensMairesRoute,
+  MonumentsSlugRoute: MonumentsSlugRoute,
+  MonumentsIndexRoute: MonumentsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
