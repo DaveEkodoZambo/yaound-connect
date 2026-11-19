@@ -51,9 +51,9 @@ const QUICK_LINKS = [
     label: "Maires de la Ville de Yaoundé et anciens élus de la Ville",
     to: "/institution/anciens-maires" as const,
   },
-  { icon: Building2, label: "Grands projets et réalisations urbaines" },
-  { icon: ClipboardCheck, label: "Suivi des actes d’urbanisme" },
   { icon: Landmark, label: "Monuments emblématiques", to: "/monuments" as const },
+  { icon: ClipboardCheck, label: "Suivi des actes d’urbanisme" },
+  { icon: Building2, label: "Grands projets et réalisations urbaines" },
   { icon: MapPinned, label: "Géoportail de la Ville" },
 ];
 
