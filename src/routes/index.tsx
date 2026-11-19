@@ -5,10 +5,6 @@ import {
   Building2,
   MapPinned,
   ClipboardCheck,
-  Gavel,
-  House,
-  Palmtree,
-  BriefcaseBusiness,
   ExternalLink,
   Paperclip,
   Clock,
@@ -56,13 +52,9 @@ const QUICK_LINKS = [
     to: "/institution/anciens-maires" as const,
   },
   { icon: Building2, label: "Grands projets et réalisations urbaines" },
-  { icon: Gavel, label: "Marchés publics" },
   { icon: ClipboardCheck, label: "Suivi des actes d’urbanisme" },
   { icon: Landmark, label: "Monuments emblématiques", to: "/monuments" as const },
-  { icon: House, label: "Logements" },
-  { icon: Palmtree, label: "Tourisme et loisirs" },
   { icon: MapPinned, label: "Géoportail de la Ville" },
-  { icon: BriefcaseBusiness, label: "Offres d’emploi" },
 ];
 
 const FIL_INFO = [
