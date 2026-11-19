@@ -106,7 +106,7 @@ function Home_() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-4 py-10 lg:grid-cols-[300px_minmax(0,1fr)] lg:px-8 xl:grid-cols-[300px_minmax(0,1fr)_400px]">
+      <main className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-4 py-10 lg:grid-cols-[260px_minmax(0,1fr)_320px] lg:px-8 xl:grid-cols-[300px_minmax(0,1fr)_400px]">
         {/* Accès rapides */}
         <aside className="lg:order-1">
           <h2 className="text-center text-2xl">Accès rapides</h2>
@@ -292,7 +292,7 @@ function Home_() {
         </div>
 
         {/* Fil info */}
-        <aside className="bg-surface p-6 lg:order-3 lg:col-span-2 xl:col-span-1">
+        <aside className="bg-surface p-6 lg:order-3 lg:col-span-1">
           <h2 className="text-3xl text-accent-red">Fil info</h2>
           <ul className="mt-6 space-y-8">
             {FIL_INFO.map((item, i) => (
