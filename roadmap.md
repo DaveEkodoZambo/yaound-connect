@@ -1,5 +1,9 @@
 # Feuille de route
 
+- [ ] Créer la présentation des quatre projets à partir des cinq documents
+- [ ] Créer les fiches détaillées avec financements et tronçons du PDVIR
+- [ ] Relier l’accès de l’accueil sans changer ses colonnes et vérifier le parcours
+
 - [x] Créer la galerie des cinq monuments avec les photographies fournies
 - [x] Créer les pages détaillées à partir du document fourni
 - [x] Relier l’accès de l’accueil et vérifier le parcours complet

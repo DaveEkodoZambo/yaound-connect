@@ -14,6 +14,8 @@ import { Route as Histoire21LieuxEmblematiquesYaoundeRouteImport } from './route
 import { Route as InstitutionAnciensMairesRouteImport } from './routes/institution.anciens-maires'
 import { Route as MonumentsIndexRouteImport } from './routes/monuments.index'
 import { Route as MonumentsSlugRouteImport } from './routes/monuments.$slug'
+import { Route as ProjetsIndexRouteImport } from './routes/projets.index'
+import { Route as ProjetsSlugRouteImport } from './routes/projets.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,20 +44,34 @@ const MonumentsSlugRoute = MonumentsSlugRouteImport.update({
   path: '/monuments/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetsIndexRoute = ProjetsIndexRouteImport.update({
+  id: '/projets/',
+  path: '/projets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetsSlugRoute = ProjetsSlugRouteImport.update({
+  id: '/projets/$slug',
+  path: '/projets/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
+  '/projets/$slug': typeof ProjetsSlugRoute
   '/monuments/': typeof MonumentsIndexRoute
+  '/projets/': typeof ProjetsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
+  '/projets/$slug': typeof ProjetsSlugRoute
   '/monuments': typeof MonumentsIndexRoute
+  '/projets': typeof ProjetsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -63,7 +79,9 @@ export interface FileRoutesById {
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
+  '/projets/$slug': typeof ProjetsSlugRoute
   '/monuments/': typeof MonumentsIndexRoute
+  '/projets/': typeof ProjetsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -72,21 +90,27 @@ export interface FileRouteTypes {
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
+    | '/projets/$slug'
     | '/monuments/'
+    | '/projets/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
+    | '/projets/$slug'
     | '/monuments'
+    | '/projets'
   id:
     | '__root__'
     | '/'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
+    | '/projets/$slug'
     | '/monuments/'
+    | '/projets/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,7 +118,9 @@ export interface RootRouteChildren {
   Histoire21LieuxEmblematiquesYaoundeRoute: typeof Histoire21LieuxEmblematiquesYaoundeRoute
   InstitutionAnciensMairesRoute: typeof InstitutionAnciensMairesRoute
   MonumentsSlugRoute: typeof MonumentsSlugRoute
+  ProjetsSlugRoute: typeof ProjetsSlugRoute
   MonumentsIndexRoute: typeof MonumentsIndexRoute
+  ProjetsIndexRoute: typeof ProjetsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -134,6 +160,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonumentsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projets/': {
+      id: '/projets/'
+      path: '/projets'
+      fullPath: '/projets/'
+      preLoaderRoute: typeof ProjetsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projets/$slug': {
+      id: '/projets/$slug'
+      path: '/projets/$slug'
+      fullPath: '/projets/$slug'
+      preLoaderRoute: typeof ProjetsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -143,7 +183,9 @@ const rootRouteChildren: RootRouteChildren = {
     Histoire21LieuxEmblematiquesYaoundeRoute,
   InstitutionAnciensMairesRoute: InstitutionAnciensMairesRoute,
   MonumentsSlugRoute: MonumentsSlugRoute,
+  ProjetsSlugRoute: ProjetsSlugRoute,
   MonumentsIndexRoute: MonumentsIndexRoute,
+  ProjetsIndexRoute: ProjetsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

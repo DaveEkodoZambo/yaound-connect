@@ -53,7 +53,7 @@ const QUICK_LINKS = [
   },
   { icon: Landmark, label: "Monuments emblématiques", to: "/monuments" as const },
   { icon: ClipboardCheck, label: "Suivi des actes d’urbanisme" },
-  { icon: Building2, label: "Grands projets et réalisations urbaines" },
+  { icon: Building2, label: "Grands projets et réalisations urbaines", to: "/projets" as const },
   { icon: MapPinned, label: "Géoportail de la Ville" },
 ];
 
