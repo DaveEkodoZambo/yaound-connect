@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GeoportailRouteImport } from './routes/geoportail'
 import { Route as Histoire21LieuxEmblematiquesYaoundeRouteImport } from './routes/histoire.21-lieux-emblematiques-yaounde'
 import { Route as InstitutionAnciensMairesRouteImport } from './routes/institution.anciens-maires'
 import { Route as MonumentsIndexRouteImport } from './routes/monuments.index'
@@ -20,6 +21,11 @@ import { Route as ProjetsSlugRouteImport } from './routes/projets.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeoportailRoute = GeoportailRouteImport.update({
+  id: '/geoportail',
+  path: '/geoportail',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Histoire21LieuxEmblematiquesYaoundeRoute =
@@ -57,6 +63,7 @@ const ProjetsSlugRoute = ProjetsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/geoportail': typeof GeoportailRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/geoportail': typeof GeoportailRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
@@ -76,6 +84,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/geoportail': typeof GeoportailRoute
   '/histoire/21-lieux-emblematiques-yaounde': typeof Histoire21LieuxEmblematiquesYaoundeRoute
   '/institution/anciens-maires': typeof InstitutionAnciensMairesRoute
   '/monuments/$slug': typeof MonumentsSlugRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/geoportail'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/geoportail'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/geoportail'
     | '/histoire/21-lieux-emblematiques-yaounde'
     | '/institution/anciens-maires'
     | '/monuments/$slug'
@@ -115,6 +127,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GeoportailRoute: typeof GeoportailRoute
   Histoire21LieuxEmblematiquesYaoundeRoute: typeof Histoire21LieuxEmblematiquesYaoundeRoute
   InstitutionAnciensMairesRoute: typeof InstitutionAnciensMairesRoute
   MonumentsSlugRoute: typeof MonumentsSlugRoute
@@ -130,6 +143,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/geoportail': {
+      id: '/geoportail'
+      path: '/geoportail'
+      fullPath: '/geoportail'
+      preLoaderRoute: typeof GeoportailRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/histoire/21-lieux-emblematiques-yaounde': {
@@ -179,6 +199,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GeoportailRoute: GeoportailRoute,
   Histoire21LieuxEmblematiquesYaoundeRoute:
     Histoire21LieuxEmblematiquesYaoundeRoute,
   InstitutionAnciensMairesRoute: InstitutionAnciensMairesRoute,
