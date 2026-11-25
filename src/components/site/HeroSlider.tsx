@@ -1,28 +1,28 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import independance from "@/assets/independance.jpg.asset.json";
-import lovemycountry from "@/assets/lovemycountry.jpg.asset.json";
-import reunification from "@/assets/reunification.jpg.asset.json";
-import unite from "@/assets/unite.jpg.asset.json";
+import independance from "@/assets/independance.jpg";
+import lovemycountry from "@/assets/lovemycountry.jpg";
+import reunification from "@/assets/reunification.jpg";
+import unite from "@/assets/unite.jpg";
 
 const SLIDES = [
   {
-    src: independance.url,
+    src: independance,
     alt: "Monument de l’Indépendance de Yaoundé, obélisque de 1960 et lion de bronze",
     caption: "Monument de l’Indépendance",
   },
   {
-    src: lovemycountry.url,
+    src: lovemycountry,
     alt: "Monument « I Love My Country Cameroon » dans le centre de Yaoundé",
     caption: "J’aime mon pays le Cameroun",
   },
   {
-    src: reunification.url,
+    src: reunification,
     alt: "Monument de la Réunification de Yaoundé avec ses spirales et sa statue",
     caption: "Monument de la Réunification",
   },
   {
-    src: unite.url,
+    src: unite,
     alt: "Monument de l’Unité de Yaoundé, colonnade circulaire ornée de lions",
     caption: "Monument de l’Unité",
   },

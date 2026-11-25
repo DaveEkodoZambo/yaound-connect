@@ -1,7 +1,7 @@
-import patriote from "@/assets/monument-patriote.jpg.asset.json";
-import reunification from "@/assets/monument-reunification.jpg.asset.json";
-import unite from "@/assets/monument-unite-nationale.jpg.asset.json";
-import atangana from "@/assets/statue-charles-atangana.jpg.asset.json";
+import patriote from "@/assets/monument-patriote.jpg";
+import reunification from "@/assets/monument-reunification.jpg";
+import unite from "@/assets/monument-unite-nationale.jpg";
+import atangana from "@/assets/statue-charles-atangana.jpg";
 import marche from "@/assets/yaounde-marche.jpg";
 import vert from "@/assets/yaounde-espace-vert.jpg";
 import stade from "@/assets/yaounde-stade.jpg";
@@ -21,10 +21,10 @@ export type Poi = { id: string; name: string; category: PoiCategory; quartier: s
 
 // Positions approximatives, à confirmer par les services de la CUY.
 export const pois: Poi[] = [
-  { id: "patriote", name: "Monument Patriote « J'aime mon pays »", category: "Monuments", quartier: "Centre-ville", arrondissement: "Yaoundé I", lat: 3.8655, lng: 11.5168, image: patriote.url, description: "Place paysagère aux arches bilingues célébrant l'attachement des citoyens au Cameroun.", hours: "Accès libre", tags: ["Patrimoine", "Photo"] },
-  { id: "reunification", name: "Monument de la Réunification", category: "Monuments", quartier: "Ngoa-Ekellé", arrondissement: "Yaoundé III", lat: 3.8555, lng: 11.5058, image: reunification.url, description: "Spirale monumentale et groupe sculpté symbolisant la réunification de 1961.", hours: "Accès libre", tags: ["Histoire", "Panorama"] },
-  { id: "unite", name: "Monument de l'Unité Nationale", category: "Monuments", quartier: "Centre administratif", arrondissement: "Yaoundé I", lat: 3.8725, lng: 11.5135, image: unite.url, description: "Colonnade circulaire, lions gardiens et étoile dorée de l'unité.", hours: "Accès libre", tags: ["Patrimoine"] },
-  { id: "atangana", name: "Statue de Charles Atangana", category: "Monuments", quartier: "Centre-ville", arrondissement: "Yaoundé I", lat: 3.8642, lng: 11.5195, image: atangana.url, description: "Mémorial du Chef Supérieur des Ewondo et des Bene.", hours: "Accès libre", tags: ["Mémoire"] },
+  { id: "patriote", name: "Monument Patriote « J'aime mon pays »", category: "Monuments", quartier: "Centre-ville", arrondissement: "Yaoundé I", lat: 3.8655, lng: 11.5168, image: patriote, description: "Place paysagère aux arches bilingues célébrant l'attachement des citoyens au Cameroun.", hours: "Accès libre", tags: ["Patrimoine", "Photo"] },
+  { id: "reunification", name: "Monument de la Réunification", category: "Monuments", quartier: "Ngoa-Ekellé", arrondissement: "Yaoundé III", lat: 3.8555, lng: 11.5058, image: reunification, description: "Spirale monumentale et groupe sculpté symbolisant la réunification de 1961.", hours: "Accès libre", tags: ["Histoire", "Panorama"] },
+  { id: "unite", name: "Monument de l'Unité Nationale", category: "Monuments", quartier: "Centre administratif", arrondissement: "Yaoundé I", lat: 3.8725, lng: 11.5135, image: unite, description: "Colonnade circulaire, lions gardiens et étoile dorée de l'unité.", hours: "Accès libre", tags: ["Patrimoine"] },
+  { id: "atangana", name: "Statue de Charles Atangana", category: "Monuments", quartier: "Centre-ville", arrondissement: "Yaoundé I", lat: 3.8642, lng: 11.5195, image: atangana, description: "Mémorial du Chef Supérieur des Ewondo et des Bene.", hours: "Accès libre", tags: ["Mémoire"] },
   { id: "chu", name: "Centre Hospitalier Universitaire (CHU)", category: "Hôpitaux", quartier: "Melen", arrondissement: "Yaoundé III", lat: 3.8628, lng: 11.4975, image: eau, description: "Hôpital universitaire de référence associé à la Faculté de médecine.", hours: "Urgences 24 h/24", tags: ["Urgences", "Universitaire"] },
   { id: "hgy", name: "Hôpital Général de Yaoundé", category: "Hôpitaux", quartier: "Ngousso", arrondissement: "Yaoundé V", lat: 3.8935, lng: 11.5480, image: eau, description: "Établissement de première catégorie offrant des soins spécialisés.", hours: "Urgences 24 h/24", tags: ["Spécialités"] },
   { id: "hcentral", name: "Hôpital Central de Yaoundé", category: "Hôpitaux", quartier: "Messa", arrondissement: "Yaoundé II", lat: 3.8730, lng: 11.5070, image: eau, description: "Le plus ancien grand hôpital public de la capitale.", hours: "Urgences 24 h/24", tags: ["Public"] },

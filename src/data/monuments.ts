@@ -1,8 +1,8 @@
-import patriote from "@/assets/monument-patriote.jpg.asset.json";
-import reunification from "@/assets/monument-reunification.jpg.asset.json";
-import atangana from "@/assets/statue-charles-atangana.jpg.asset.json";
-import unite from "@/assets/monument-unite-nationale.jpg.asset.json";
-import independance from "@/assets/monument-1960.jpg.asset.json";
+import patriote from "@/assets/monument-patriote.jpg";
+import reunification from "@/assets/monument-reunification.jpg";
+import atangana from "@/assets/statue-charles-atangana.jpg";
+import unite from "@/assets/monument-unite-nationale.jpg";
+import independance from "@/assets/monument-1960.jpg";
 
 export type Monument = {
   slug: string;
@@ -22,7 +22,7 @@ export const monuments: Monument[] = [
     slug: "monument-patriote",
     name: "Le Monument Patriote",
     category: "Engagement civique",
-    image: patriote.url,
+    image: patriote,
     alt: "Vue d’ensemble du Monument Patriote et de ses arches bilingues à Yaoundé",
     summary: "Sous ses grandes arches bilingues, une place paysagère célèbre l’attachement au Cameroun et la fierté de ses citoyens.",
     caption: "Les arches « J’aime mon pays le Cameroun » et « I love my country Cameroon », au cœur d’un rond-point paysager.",
@@ -38,7 +38,7 @@ export const monuments: Monument[] = [
     slug: "monument-reunification",
     name: "Le Monument de la Réunification",
     category: "Mémoire nationale",
-    image: reunification.url,
+    image: reunification,
     alt: "Sculpture d’un adulte entouré d’enfants devant la spirale du Monument de la Réunification",
     summary: "Un groupe sculpté et une architecture en spirale racontent la fraternité, la transmission et l’avenir d’une nation réunie.",
     caption: "Le groupe sculpté en pierre et, à l’arrière-plan, la structure hélicoïdale du Monument de la Réunification.",
@@ -54,7 +54,7 @@ export const monuments: Monument[] = [
     slug: "charles-atangana-ntsama",
     name: "La Statue de Charles Atangana Ntsama",
     category: "Figure historique",
-    image: atangana.url,
+    image: atangana,
     alt: "Statue en pied de Charles Atangana Ntsama, en tenue de commandement, dans un jardin",
     summary: "Un mémorial dans un écrin de verdure rend hommage au Chef Supérieur des Ewondo et des Bene et à son rôle dans l’histoire locale.",
     caption: "Charles Atangana Ntsama représenté en habit de commandement, au-dessus de sa plaque commémorative.",
@@ -69,7 +69,7 @@ export const monuments: Monument[] = [
     slug: "monument-unite-nationale",
     name: "Le Monument de l’Unité Nationale",
     category: "Unité et souveraineté",
-    image: unite.url,
+    image: unite,
     alt: "Colonnade blanche circulaire du Monument de l’Unité Nationale, avec lions et étoile centrale",
     summary: "Une colonnade circulaire, des lions gardiens et une étoile dorée composent une architecture consacrée à la cohésion nationale.",
     caption: "L’anneau porté par les colonnes blanches, les lions et l’étoile à cinq branches, devant les collines verdoyantes.",
@@ -85,7 +85,7 @@ export const monuments: Monument[] = [
     slug: "monument-independance-1960",
     name: "Le Monument de l’Indépendance de 1960",
     category: "Indépendance",
-    image: independance.url,
+    image: independance,
     alt: "Obélisque commémoratif portant la date 1960 et un socle décoré d’armoiries",
     summary: "Un obélisque élancé portant la date 1960 rappelle l’accession du Cameroun à la souveraineté internationale.",
     caption: "L’obélisque historique de 1960, sa pointe rouge et son socle aux armoiries républicaines.",

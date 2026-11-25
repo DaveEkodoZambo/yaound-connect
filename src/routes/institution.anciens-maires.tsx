@@ -2,11 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CalendarDays, Check } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import andreFoudaOmgba from "@/assets/andre-fouda-omgba.jpg.asset.json";
-import gilbertTsimiEvouna from "@/assets/gilbert-tsimi-evouna.jpg.asset.json";
-import lucMessiAtangana from "@/assets/luc-messi-atangana.jpg.asset.json";
-import nicaloAmougouNoma from "@/assets/nicalo-amougou-noma.jpg.asset.json";
-import monumentReunification from "@/assets/reunification.jpg.asset.json";
+import andreFoudaOmgba from "@/assets/andre-fouda-omgba.jpg";
+import gilbertTsimiEvouna from "@/assets/gilbert-tsimi-evouna.jpg";
+import lucMessiAtangana from "@/assets/luc-messi-atangana.jpg";
+import nicaloAmougouNoma from "@/assets/nicalo-amougou-noma.jpg";
+import monumentReunification from "@/assets/reunification.jpg";
 import { cn } from "@/lib/utils";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -19,7 +19,7 @@ const MAYORS = [
   {
     name: "André FOUDA OMGBA",
     years: "1964–1980",
-    image: andreFoudaOmgba.url,
+    image: andreFoudaOmgba,
     status: "Pionnier de la capitale",
     alt: "Portrait d’André Fouda Omgba, maire de Yaoundé de 1964 à 1980",
     intro:
@@ -35,7 +35,7 @@ const MAYORS = [
   {
     name: "Nicalo AMOUGOU NOMA",
     years: "2001–2004",
-    image: nicaloAmougouNoma.url,
+    image: nicaloAmougouNoma,
     status: "Le maire de la transition",
     alt: "Portrait de Nicalo Amougou Noma, maire de Yaoundé de 2001 à 2004",
     intro:
@@ -51,7 +51,7 @@ const MAYORS = [
   {
     name: "Gilbert TSIMI EVOUNA",
     years: "2004–2020",
-    image: gilbertTsimiEvouna.url,
+    image: gilbertTsimiEvouna,
     status: "Seize ans à la tête de la ville",
     alt: "Portrait de Gilbert Tsimi Evouna, maire de Yaoundé de 2004 à 2020",
     intro:
@@ -68,7 +68,7 @@ const MAYORS = [
   {
     name: "Luc MESSI ATANGANA",
     years: "Depuis 2020",
-    image: lucMessiAtangana.url,
+    image: lucMessiAtangana,
     status: "Maire en fonction",
     alt: "Portrait de Luc Messi Atangana, maire de Yaoundé depuis 2020",
     intro:
@@ -234,7 +234,7 @@ function FormerMayorsPage() {
         <section className="relative overflow-hidden bg-brand text-brand-foreground">
           <div className="absolute inset-y-0 right-0 hidden w-[44%] lg:block">
             <img
-              src={monumentReunification.url}
+              src={monumentReunification}
               alt="Monument de la Réunification à Yaoundé"
               className="h-full w-full object-cover object-center"
             />
